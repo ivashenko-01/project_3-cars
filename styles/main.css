@@ -69,22 +69,50 @@ aside, nav, footer, header, section, main {
 }
 
 
+:root {
 
+    /* -- =============== COLORS =============== -- */
+    --body-color: #ffffff;
+    --title-color: #000000;
+    --text-color: #000000;
+  
+    /* -- =============== FONT AND TYPOGRAPHY =============== -- */
+    /* -- .5rem = 8px | 1rem = 16px | 2rem = 32px -- */
+    --body-font: 'Haval';
 
+    --body-font-size: 1rem; /* 16px */
 
+    --h1-font-size: 48px; /* 3rem */
+    --h2-font-size: 36px; /* 2,25rem */
+    --h3-font-size: 32px; /* 2rem */
+    --h4-font-size: 24px; /* 1.5rem */
+    --h5-font-size: 20px; /* 1.25rem */
+    --h6-font-size: 16px; /* 1rem */
 
+    --text-font-size: 14px; /* 0.875rem */
+    --description-font-size: 12px;
 
+    --button-font-size: 20px; /* 1.25rem */
 
-
-
-
-
-
-
+}
 
 body {
-    font-family: 'Haval';
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  font-weight: 400;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--title-color);
+}
+  
+
+
+
+
+
 
 
 
@@ -241,7 +269,8 @@ body {
 
     top: 0;
     left: -150px;
-    width: 1140px;
+    max-width: 1140px;
+    width: 100%;
     height: 100%;
     
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 38.72%, rgba(0, 0, 0, 0.50) 61.63%, rgba(0, 0, 0, 0.00) 100%);
@@ -304,6 +333,7 @@ body {
     text-transform: uppercase;
     color: white;
     text-decoration: none;
+    text-align: center;
 }
 
 .cars {
@@ -754,4 +784,108 @@ body {
 }
 .form__phone {
     margin-bottom: 30px;
+}
+
+.swiper-slide:hover {
+    cursor: pointer;
+}
+
+.red {
+    background-color: hsla(12, 66%, 38%, 1);
+}
+
+.color-list__item {
+    z-index: 5;
+}
+
+.color-list__item.active {
+    position: relative;
+}
+.color-list__item.active::after {
+    position: absolute;
+    content: '';
+    width: 35px;
+    height: 35px;
+    box-shadow: 0px 0px 5px 2px #000, 0px 0px 0px 3px #FFF;
+    border-radius: 50%;
+    top: -3px;
+    left: -3px;
+    z-index: -10;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@media (max-width: 1150px) {
+    .cars__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header__top {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header__bottom {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section-timer__wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section-timer__wrapper-timer {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .section-timer__title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom-left__menu,
+    .bottom-right__menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cars__list-item {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .list-item__info {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .section-timer__wrapper-button a {
+        font-size: 10px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .section-news__title {
+        font-size: 15px;
+    }
+    .section-news__button {
+        font-size: 10px;
+    }
+    .list-item__info-wrapper {
+        flex-direction: column;
+    }
+
 }
